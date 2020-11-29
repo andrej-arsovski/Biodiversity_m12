@@ -82,6 +82,7 @@ function buildCharts(sample) {
       type:"bar"
 
     };
+    var trace = [barData];
     // 9. Create the layout for the bar chart. 
     var barLayout = {
       title: "Top 10 Bacteria Cultures Found",
@@ -89,6 +90,6 @@ function buildCharts(sample) {
       yaxis: { title: "Number of Cultures"}
     };
     // 10. Use Plotly to plot the data with the layout. 
-    Plotly.newPlot("bar", barData, barLayout);
+    Plotly.newPlot("bar", trace, barLayout);
   });
 }
