@@ -76,13 +76,13 @@ function buildCharts(sample) {
     var yticks = otuIDS.sort((a,b)=>values[a]-values[b]).reverse().slice(0,10);
 
     // 8. Create the trace for the bar chart. 
-    var barData = {
+    var trace = {
       x: otuIDS,
       y: yticks,
       type:"bar"
 
     };
-    var trace = [barData];
+    var barData = [trace];
     // 9. Create the layout for the bar chart. 
     var barLayout = {
       title: "Top 10 Bacteria Cultures Found",
@@ -90,6 +90,6 @@ function buildCharts(sample) {
       yaxis: { title: "Number of Cultures"}
     };
     // 10. Use Plotly to plot the data with the layout. 
-    Plotly.newPlot("bar", trace, barLayout);
+    Plotly.newPlot("bar", barData, barLayout);
   });
 }
